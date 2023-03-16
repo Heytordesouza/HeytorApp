@@ -72,13 +72,22 @@ color: #000000;
 //     gap: 1vh;
 // `
 
+export const Input = styled.div`
+display: flex;
+flex-direction: column;
+gap: 1vh;
+width: 80%;
+justify-content: center;
+align-items: center;
+`
+
 export const InputEmail = styled.input`
 
     border: 1px solid #D5D8DE;
     border-radius: 4px;
     height: 60px;
     width: 363px;
-    padding-left: 4vw;
+    padding-left: 2vw;
     font-weight: 400;
     font-size: 16px;
     font-family: 'Noto Sans';
@@ -91,11 +100,17 @@ export const InputPassword = styled.input`
     border-radius: 4px;
     height: 60px;
     width: 363px;
-    padding-left: 4vw;
+    padding-left: 2vw;
     font-weight: 400;
     font-size: 16px;
     font-family: 'Noto Sans';
     color: #323941;
+`
+
+export const Button = styled.div`
+display: flex;
+flex-direction: column;
+
 `
 
 export const Continue = styled.div`
@@ -115,4 +130,48 @@ text-align: center;
 background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
 border-radius: 27px;
 color: white;
+cursor: pointer;
+margin-bottom: 2.5vh;
+margin-top: 2.5vh;
 `
+
+export const Line = styled.img`
+/* position: absolute; */
+width: 363.01px;
+height: 5px;
+/* left: 33px;
+top: 656px; */
+
+transform: rotate(- 0.999deg);
+`
+
+export const CreateAccount = styled.div`
+width: 365px;
+height: 51px;
+
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 25px;
+/* identical to box height */
+text-align: center;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 13px;
+gap: 10px;
+
+color: #FE7E02;
+margin-top: 2.5vh;
+
+
+/* Inside auto layout */
+
+
+border: 1px solid #FE7E02;
+border-radius: 27px;
+cursor: pointer;
+`
+
