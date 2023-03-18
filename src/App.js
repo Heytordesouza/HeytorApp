@@ -1,6 +1,7 @@
 import { GlobalContext } from "./contexts/GlobalContext";
 import { createGlobalStyle } from "styled-components";
 import Router from "./router/Router";
+import GlobalState from "./contexts/GlobalState"
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -9,15 +10,18 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }`;
 
+
 export default function App() {
 
+  const context = GlobalState()
 
-return (
-  <>
-  <GlobalStyle />
-  <GlobalContext.Provider>
-    <Router />
-  </GlobalContext.Provider>
-  </>
+
+  return (
+    <>
+      <GlobalStyle value={context} />
+      <GlobalContext.Provider>
+        <Router />
+      </GlobalContext.Provider>
+    </>
   );
 }

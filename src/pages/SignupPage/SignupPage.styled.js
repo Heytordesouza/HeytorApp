@@ -43,6 +43,7 @@ font-style: normal;
 font-weight: 600;
 font-size: 18px;
 line-height: 25px;
+cursor: pointer;
 /* identical to box height */
 
 text-align: center;
