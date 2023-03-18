@@ -8,12 +8,6 @@ function GlobalState(){
 
     const [loading, setLoading] = useState(false)
 
-    const [modal, setModal] = useState(false)
-
-    const [actionModal, setActionModal] = useState('')
-
-    const [alertModal, setAlertModal] = useState(false)
-
     return{
         posts,
         setPosts,
@@ -21,12 +15,6 @@ function GlobalState(){
         setUrlPost,
         loading, 
         setLoading,
-        modal, 
-        setModal,
-        actionModal, 
-        setActionModal,
-        alertModal, 
-        setAlertModal,
     }
 }
 

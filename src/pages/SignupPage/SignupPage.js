@@ -10,7 +10,7 @@ function SignupPage(){
     const navigate = useNavigate()
 
     const [form, setForm] = useState({
-      username: '',
+      name: '',
       email: '',
       password: '',
   }) 
@@ -25,7 +25,7 @@ function SignupPage(){
       try {
 
           let body ={
-              username: form.username,
+              name: form.name,
               email: form.email,
               password: form.password,
           }
@@ -49,7 +49,7 @@ function SignupPage(){
           </Header>
           <Welcome>Olá, boas vindas ao LabEddit ;)</Welcome>
           <Input>
-            <InputUserName value={form.username} name="username" onChange={onChangeForm} placeholder="Apelido"/>
+            <InputUserName value={form.name} name="name" onChange={onChangeForm} placeholder="Apelido"/>
             <InputEmail value={form.email} name="email" onChange={onChangeForm} placeholder="E-mail"/>
             <InputPassword value={form.password} name="password" onChange={onChangeForm} type="password" placeholder="Senha"/>
           </Input>
