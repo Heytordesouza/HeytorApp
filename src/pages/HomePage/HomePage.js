@@ -1,16 +1,81 @@
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
 import { goToLoginPage } from "../../router/Coordinator"
 import { useNavigate } from "react-router-dom"
+import { Container, PostContainer } from "./HomePage.styled";
+import { Header } from "../../components/Header/Header"
+import { PostCard } from "../../components/Card/PostCard";
+import { BASE_URL } from "../../constants/BASE_URL";
+import { GlobalContext } from "../../contexts/GlobalContext";
+
+export const HomePage = () => {
+
+  const navigate = useNavigate()
+
+  const context = useContext(GlobalContext);
+
+  const { posts, fetchPosts } = context;
+  const [ content, setContent ] = useState("");
 
 
-function HomePage(){
-    const navigate = useNavigate()
+  useEffect(() => {
+    const token = window.localStorage.getItem("TokenApi-Labeddit");
+
+    if (!token) {
+      goToLoginPage(navigate);
+    } else {
+      fetchPosts();
+    }
+  }, []);
+
+  const createPost = async (event) => {
+    event.preventDefault();
+
+    try {
+      const body = {
+        content: content,
+      };
+
+      await axios.post(`${BASE_URL}/posts`, body, {
+        headers: {
+          Authorization: window.localStorage.getItem("TokenApi-Labeddit"),
+        },
+      });
+
+      setContent("");
+      fetchPosts();
+    } catch (error) {
+      console.error(error?.response?.data);
+      window.alert(error?.response?.data);
+    }
+
+  };
     
+  return(
+    <Container>
+    <Header />
+    <PostContainer>
+      <form onSubmit={createPost}>
+        <section>
+          <textarea
+          maxLength={150}
+          type="text"
+          wrap="hard"
+          placeholder="Escreva seu post..."
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          />
+        </section>
+        <button>Postar</button>
+      </form>
+    </PostContainer>
 
-    return(
-      <>
-       <button onClick={()=>goToLoginPage(navigate)}>Logout</button>
-      </>
+
+    <section>
+      {posts && posts.map((post) => {
+        return <PostCard key={post.id} post={post} />;
+      })}
+    </section>
+    </Container>
   )
 }
-
-export default HomePage
