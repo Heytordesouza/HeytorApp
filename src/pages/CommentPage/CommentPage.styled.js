@@ -13,6 +13,7 @@ export const Container = styled.main`
 
 
 export const PostContainer = styled.div`
+    display: flex;
     height: 250px;
     margin-top: 10px;
     textarea {
@@ -21,11 +22,10 @@ export const PostContainer = styled.div`
         background: #EDEDED;
         border-radius: 12px;
         border: none;
-        display: block;
+        display: flex;
         margin-bottom: 15px;
         padding-left: 20px;
         padding-top: 10px;
-        word-break: break-word;
     }
     button {
     width: 365px;

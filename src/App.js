@@ -1,7 +1,8 @@
 import { GlobalContext } from "./contexts/GlobalContext";
 import { createGlobalStyle } from "styled-components";
 import Router from "./router/Router";
-import GlobalState from "./contexts/GlobalState"
+import {GlobalState} from "./contexts/GlobalState";
+import { ChakraProvider } from '@chakra-ui/react';
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -15,13 +16,12 @@ export default function App() {
 
   const context = GlobalState()
 
-
   return (
-    <>
-      <GlobalStyle value={context} />
-      <GlobalContext.Provider>
+    <GlobalContext.Provider value={context}>
+      <ChakraProvider>
+        <GlobalStyle />
         <Router />
-      </GlobalContext.Provider>
-    </>
+      </ChakraProvider>
+    </GlobalContext.Provider>
   );
 }
