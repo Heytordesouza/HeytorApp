@@ -26,7 +26,6 @@ export const SignupPage = () => {
       setForm({ ...form, [event.target.name]: event.target.value })
   }
 
-  
   const signup = async (event)=>{
     event.preventDefault();
     setIsLoading(true)
