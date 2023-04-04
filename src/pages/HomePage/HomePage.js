@@ -17,7 +17,6 @@ export const HomePage = () => {
   const { posts, fetchPosts } = context;
   const [ content, setContent ] = useState("");
 
-
   useEffect(() => {
     const token = window.localStorage.getItem("TokenApi-Labeddit");
 

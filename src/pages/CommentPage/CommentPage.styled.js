@@ -11,7 +11,6 @@ export const Container = styled.main`
     }
 `
 
-
 export const PostContainer = styled.div`
     display: flex;
     height: 250px;

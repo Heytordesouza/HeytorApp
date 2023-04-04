@@ -43,10 +43,7 @@ export const SubTitle = styled.div`
     font-weight: 300;
     font-size: 16px;
     line-height: 21px;
-    /* identical to box height */
-
     text-align: center;
-
     color: #000000;
 `
 

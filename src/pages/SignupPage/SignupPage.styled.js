@@ -115,68 +115,67 @@ export const InputPassword = styled.input`
 `
 
 export const Signup = styled.div`
-width: 365px;
-height: 51px;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-gap: 1vh;
-font-family: 'Noto Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 25px;
-text-align: center;
-background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
-border-radius: 27px;
-color: white;
-cursor: pointer;
-margin-bottom: 2.5vh;
-margin-top: 2.5vh;
+    width: 365px;
+    height: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vh;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+    border-radius: 27px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 2.5vh;
+    margin-top: 2.5vh;
 `
 
 export const Contract = styled.p`
-width: 361.02px;
-height: 38px;
-margin-top: 45px;
-margin-bottom: 15px;
+    width: 361.02px;
+    height: 38px;
+    margin-top: 45px;
+    margin-bottom: 15px;
 
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
 
-font-family: 'Noto Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 19px;
-
-color: #000000;
+    color: #000000;
 `
 
 
 export const ToAccept = styled.p`
-width: 361.02px;
+    width: 361.02px;
 `
 
 export const Span = styled.span`
-display: flex;
-width: 361.02px;
-gap: 10px;
-justify-content: center;
+    display: flex;
+    width: 361.02px;
+    gap: 10px;
+    justify-content: center;
 `
 
 export const Label = styled.label`
-width: 361px;
-height: 38px;
-font-family: 'Noto Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 19px;
+    width: 361px;
+    height: 38px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
 
-color: #000000;
+    color: #000000;
 `
 
 export const CheckBox = styled.input`
-border: 1px solid #C4C4C4;
-border-radius: 2px;
+    border: 1px solid #C4C4C4;
+    border-radius: 2px;
 `

@@ -5,7 +5,7 @@ import { BASE_URL } from "../../constants/BASE_URL"
 import coment from "../../assets/coment.svg"
 import like from "../../assets/like.svg"
 import dislike from "../../assets/dislike.svg"
-import { CardContainer, PostMenu, SubText, TextButton } from "./Card.styled"
+import { CardContainer, PostMenu, SubText, TextButton, SubTextButton } from "./Card.styled"
 import { useNavigate } from "react-router-dom";
 import { goToCommentPage } from "../../router/Coordinator";
 
@@ -62,14 +62,14 @@ export const PostCard = (props) => {
             <h1>{post.content}</h1>
             <PostMenu>
                 <TextButton>
-                    <span onClick={likePost}>
+                    <SubTextButton onClick={likePost}>
                         <img src={like} alt="botão-like"/>
                         {post.likes}
-                    </span>
-                    <span onClick={dislikePost}>
+                    </SubTextButton>
+                    <SubTextButton onClick={dislikePost}>
                         <img src={dislike}  alt="botão-dislike"/> 
                         {post.dislikes}
-                    </span>
+                    </SubTextButton>
                 </TextButton> 
                 <SubText>
                     <span onClick={() => goToCommentPage(navigate, post.id)}>

@@ -20,8 +20,6 @@ export const SignupPage = () => {
     password: '',
   }) 
 
-  // const [showPassword, setShowPassword] = useState(false);
-
   const onChangeForm = (event)=>{
       setForm({ ...form, [event.target.name]: event.target.value })
   }
@@ -81,8 +79,6 @@ export const SignupPage = () => {
                             <CheckBox 
                               className="CheckBox" 
                               type="checkbox" 
-                              // value={showPassword}
-                              // onChange={() => setShowPassword(!showPassword)}
                             />
                             <Label>Eu concordo em receber e-mails sobre coisas legais no Labeddit</Label>
                         </Span>

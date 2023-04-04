@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CardContainer, PostMenu, SubText, TextButton } from "../../components/Card/Card.styled";
+import { CardContainer, PostMenu, SubText, TextButton, SubTextButton } from "../../components/Card/Card.styled";
 import { goToLoginPage } from "../../router/Coordinator"
 import { Header } from "../../components/Header/Header";
 import { BASE_URL } from "../../constants/BASE_URL";
@@ -122,14 +122,14 @@ export const CommentPage = () => {
       <h1>{post?.content}</h1>
       <PostMenu>
         <TextButton>
-          <span onClick={likePost}>
+          <SubTextButton onClick={likePost}>
             <img src={like} />
             {post?.likes}
-          </span>
-          <span onClick={dislikePost}>
+          </SubTextButton>
+          <SubTextButton onClick={dislikePost}>
             <img src={dislike} />
             {post?.dislikes}
-          </span>
+          </SubTextButton>
         </TextButton>
         <SubText>
           <span>
