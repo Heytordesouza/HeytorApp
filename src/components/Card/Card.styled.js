@@ -50,3 +50,9 @@ export const SubText = styled.div`
   align-items: center;
 `
 
+export const Top = styled.div`
+  display: flex;
+  gap: 220px;
+  color: red; 
+  cursor: pointer;
+`

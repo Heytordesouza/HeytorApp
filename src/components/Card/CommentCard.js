@@ -2,11 +2,30 @@ import axios from "axios"
 import { BASE_URL } from "../../constants/BASE_URL"
 import Imglike from "../../assets/like.svg"
 import Imgdislike from "../../assets/dislike.svg"
-import { CardContainer, PostMenu, TextButton, SubTextButton } from "./Card.styled"
+import { CardContainer, PostMenu, TextButton, SubTextButton, Top } from "./Card.styled"
+import { DeleteIcon } from '@chakra-ui/icons'
 
 export const CommentCard = (props) => {
 
     const { comment, fetchComments } = props
+
+    const deleteComment = async () => {
+        try {
+          const body = {
+            headers: {
+              Authorization: window.localStorage.getItem("TokenApi-Labeddit")
+            }
+          }
+    
+          await axios.delete(`${BASE_URL}/comments/${comment.id}`, body)
+          alert("Comentário excluído com sucesso")
+          fetchComments()
+    
+        } catch (error) {
+          console.log(error)
+          alert(error.response.data)
+        }
+    }
 
     const likeComment = async ()=>{
         try {
@@ -50,7 +69,10 @@ export const CommentCard = (props) => {
 
     return(
         <CardContainer>
-            <p>Enviado por: {comment.creator.name}</p>
+            <Top>
+                <p>Enviado por: {comment.creator.name}</p>
+                <DeleteIcon onClick={deleteComment} />
+            </Top>
             <h1>{comment.content}</h1>
             <PostMenu>
                 <TextButton>

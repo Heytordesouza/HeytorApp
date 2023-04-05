@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export const Main = styled.main`
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     width: 100vw;
@@ -10,73 +9,70 @@ export const Main = styled.main`
 `
 
 export const Header = styled.header`
-display: flex;
-width: 428px;
-height: 50px;
-justify-content: center;
-top: 0px;
-align-items: center;
-
-background: #EDEDED;
+    display: flex;
+    width: 428px;
+    height: 50px;
+    justify-content: center;
+    top: 0px;
+    align-items: center;
+    background: #EDEDED;
 `
 
 export const Container = styled.div`
-display: flex;
-width: 50%;
-gap: 55%;
-margin-left: 45%;
+    display: flex;
+    width: 50%;
+    gap: 55%;
+    margin-left: 45%;
 `
 
 export const ImgLogo = styled.img`
- width: 28.02px;
- height: 28.64px;
+    width: 28.02px;
+    height: 28.64px;
 `
 
 export const ButtonLogin = styled.div`
-width: 55px;
-height: 25px;
-left: 344px;
-top: 57px;
+    width: 55px;
+    height: 25px;
+    left: 344px;
+    top: 57px;
 
-font-family: 'Noto Sans';
-font-style: normal;
-font-weight: 600;
-font-size: 18px;
-line-height: 25px;
-cursor: pointer;
-/* identical to box height */
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    cursor: pointer;
 
-text-align: center;
+    text-align: center;
 
-color: #4088CB;
+    color: #4088CB;
 `
 
 export const Welcome = styled.div`
-width: 364px;
-height: 86px;
+    width: 364px;
+    height: 86px;
 
-margin-top: 20px; 
-margin-bottom: 200px;
-font-family: 'IBM Plex Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 33px;
-line-height: 43px;
+    margin-top: 20px; 
+    margin-bottom: 200px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 43px;
 
-color: #373737;
+    color: #373737;
 `
 
 export const Input = styled.div`
-display: flex;
-flex-direction: column;
-gap: 1vh;
-width: 80%;
-justify-content: center;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
 `
 
 export const InputUserName = styled.input`
-
     border: 1px solid #D5D8DE;
     border-radius: 4px;
     height: 60px;
@@ -89,7 +85,6 @@ export const InputUserName = styled.input`
 `
 
 export const InputEmail = styled.input`
-
     border: 1px solid #D5D8DE;
     border-radius: 4px;
     height: 60px;
@@ -102,7 +97,6 @@ export const InputEmail = styled.input`
 `
 
 export const InputPassword = styled.input`
-
     border: 1px solid #D5D8DE;
     border-radius: 4px;
     height: 60px;
