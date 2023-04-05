@@ -62,7 +62,7 @@ export const LoginPage = () => {
                     value={form.password} 
                     name="password" 
                     onChange={onChangeForm} 
-                    type="text"
+                    type="password"
                     placeholder="Senha"
                 />
             </Input>
