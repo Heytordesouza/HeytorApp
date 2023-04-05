@@ -1,4 +1,4 @@
 Repositório Backend : https://github.com/Heytordesouza/Labeddit-Backend
 
-Deploy: https://labeddit-heytor-frontend.surge.sh/
+Deploy: https://labeddit-frontend-heytor.vercel.app/
 
