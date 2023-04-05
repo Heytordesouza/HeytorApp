@@ -69,7 +69,7 @@ export const SignupPage = () => {
               value={form.password} 
               name={"password"}
               onChange={onChangeForm} 
-              type={"text"} 
+              type={"password"} 
               placeholder="Senha"
             />
           </Input>
