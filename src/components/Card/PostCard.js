@@ -5,9 +5,10 @@ import { BASE_URL } from "../../constants/BASE_URL"
 import coment from "../../assets/coment.svg"
 import like from "../../assets/like.svg"
 import dislike from "../../assets/dislike.svg"
-import { CardContainer, PostMenu, SubText, TextButton, SubTextButton } from "./Card.styled"
+import { CardContainer, PostMenu, SubText, TextButton, SubTextButton, Top } from "./Card.styled"
 import { useNavigate } from "react-router-dom";
 import { goToCommentPage } from "../../router/Coordinator";
+import { DeleteIcon } from '@chakra-ui/icons'
 
 export const PostCard = (props) => {
     const context = useContext(GlobalContext)
@@ -15,6 +16,24 @@ export const PostCard = (props) => {
 
     const { post } = props
     const navigate = useNavigate()
+
+    const deletePost = async () => {
+        try {
+          const body = {
+            headers: {
+              Authorization: window.localStorage.getItem("TokenApi-Labeddit")
+            }
+          }
+    
+          await axios.delete(`${BASE_URL}/posts/${post.id}`, body)
+          alert("Post excluído com sucesso")
+          fetchPosts()
+    
+        } catch (error) {
+          console.log(error)
+          alert(error.response.data)
+        }
+      }
 
     const likePost = async ()=>{
         try {
@@ -58,7 +77,10 @@ export const PostCard = (props) => {
 
     return(
         <CardContainer>
-            <p>Enviado por: {post.creator.name}</p>
+            <Top>
+                <p>Enviado por: {post.creator.name}</p>
+                <DeleteIcon color='red' cursor='pointer' onClick={deletePost} />
+            </Top>
             <h1>{post.content}</h1>
             <PostMenu>
                 <TextButton>

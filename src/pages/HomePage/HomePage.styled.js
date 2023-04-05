@@ -4,6 +4,7 @@ export const Container = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     section {
         display: flex;
         flex-direction: column;
@@ -15,6 +16,7 @@ export const Container = styled.main`
 export const PostContainer = styled.div`
     height: 250px;
     margin-top: 10px;
+
     textarea {
         width: 364px;
         height: 131px;
@@ -27,15 +29,16 @@ export const PostContainer = styled.div`
         padding-top: 10px;
         word-break: break-word;
     }
+
     button {
-    width: 365px;
-    height: 51px;
-    background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%);
-    border-radius: 27px;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 25px;
-    cursor: pointer;
-  }
+        width: 365px;
+        height: 51px;
+        background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%);
+        border-radius: 27px;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+        cursor: pointer;
+    }
 `

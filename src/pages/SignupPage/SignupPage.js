@@ -1,28 +1,28 @@
-import { goToHomePage } from "../../router/Coordinator"
-import { useNavigate } from "react-router-dom"
-import axios from "axios"
-import { useContext, useState } from "react"
-import { BASE_URL } from "../../constants/BASE_URL"
-import { Header } from "../../components/Header/Header"
-import { Main, Welcome, Input, InputUserName, InputEmail, InputPassword, Signup, Contract, CheckBox, ToAccept, Span, Label  } from "./SignupPage.styled"
+import { goToHomePage } from "../../router/Coordinator";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useContext, useState } from "react";
+import { BASE_URL } from "../../constants/BASE_URL";
+import { Header } from "../../components/Header/Header";
+import { Main, Welcome, Input, InputUserName, InputEmail, InputPassword, Signup, Contract, CheckBox, ToAccept, Span, Label  } from "./SignupPage.styled";
 import { Spinner } from '@chakra-ui/react';
-import { GlobalContext } from '../../contexts/GlobalContext'
+import { GlobalContext } from '../../contexts/GlobalContext';
 
 export const SignupPage = () => {
   const context = useContext(GlobalContext)
   const {isLoading, setIsLoading} = context
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     name: '',
     email: '',
     password: '',
-  }) 
+  }); 
 
   const onChangeForm = (event)=>{
       setForm({ ...form, [event.target.name]: event.target.value })
-  }
+  };
 
   const signup = async (event)=>{
     event.preventDefault();
@@ -46,7 +46,7 @@ export const SignupPage = () => {
         console.error(error?.response?.data);
         window.alert(error?.response?.data);
       }
-  }
+  };
 
     return(
         <Main>

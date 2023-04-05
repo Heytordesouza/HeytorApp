@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Main = styled.main`
     display: flex;
@@ -7,14 +7,14 @@ export const Main = styled.main`
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-`
+`;
 
 export const ImgLogo = styled.img`
     width: 84px;
     height: 84px;
     margin-left: 1vw;
     margin-bottom: 1vh;
-`
+`;
 
 export const Title = styled.div`
     width: 152px;
@@ -29,7 +29,7 @@ export const Title = styled.div`
     line-height: 47px;
 
     color: #373737;
-`
+`;
 
 export const SubTitle = styled.div`
     width: 378px;
@@ -45,7 +45,7 @@ export const SubTitle = styled.div`
     line-height: 21px;
     text-align: center;
     color: #000000;
-`
+`;
 
 export const Input = styled.div`
     display: flex;
@@ -54,10 +54,9 @@ export const Input = styled.div`
     width: 80%;
     justify-content: center;
     align-items: center;
-`
+`;
 
 export const InputEmail = styled.input`
-
     border: 1px solid #D5D8DE;
     border-radius: 4px;
     height: 60px;
@@ -67,7 +66,7 @@ export const InputEmail = styled.input`
     font-size: 16px;
     font-family: 'Noto Sans';
     color: #323941;
-`
+`;
 
 export const InputPassword = styled.input`
     border: 1px solid #D5D8DE;
@@ -79,12 +78,12 @@ export const InputPassword = styled.input`
     font-size: 16px;
     font-family: 'Noto Sans';
     color: #323941;
-`
+`;
 
 export const Button = styled.div`
     display: flex;
     flex-direction: column;
-`
+`;
 
 export const Continue = styled.div`
     width: 365px;
@@ -106,14 +105,14 @@ export const Continue = styled.div`
     cursor: pointer;
     margin-bottom: 2.5vh;
     margin-top: 2.5vh;
-`
+`;
 
 export const Line = styled.img`
     width: 363.01px;
     height: 5px;
 
     transform: rotate(- 0.999deg);
-`
+`;
 
 export const CreateAccount = styled.div`
     width: 365px;
@@ -124,7 +123,6 @@ export const CreateAccount = styled.div`
     font-weight: 700;
     font-size: 18px;
     line-height: 25px;
-    /* identical to box height */
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -139,5 +137,5 @@ export const CreateAccount = styled.div`
     border: 1px solid #FE7E02;
     border-radius: 27px;
     cursor: pointer;
-`
+`;
 
