@@ -27,6 +27,7 @@ export const ContainerComments = styled.div`
 export const ImgClose = styled.img`
     display: flex;
     margin-right: 12%;
+    cursor: pointer;
 `
 
 export const ImgLogo = styled.img`
@@ -35,10 +36,8 @@ export const ImgLogo = styled.img`
 `
 
 export const Button = styled.div`
-    width: 55px;
+    width: 70px;
     height: 25px;
-    left: 344px;
-    top: 57px;
 
     font-family: 'Noto Sans';
     font-style: normal;

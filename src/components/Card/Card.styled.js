@@ -39,6 +39,10 @@ export const SubTextButton = styled.div`
   display: flex;
   flex-direction: row;
   gap: 5px;
+  
+  img{
+    cursor: pointer;
+  }
 `
 
 export const SubText = styled.div`
@@ -48,11 +52,15 @@ export const SubText = styled.div`
   border: 1px solid #e0e0e0;
   justify-content: space-around;
   align-items: center;
+
+  img{
+    cursor: pointer;
+  }
 `
 
 export const Top = styled.div`
   display: flex;
-  gap: 220px;
+  gap: 210px;
   color: red; 
   cursor: pointer;
 `
