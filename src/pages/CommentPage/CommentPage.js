@@ -33,6 +33,24 @@ export const CommentPage = () => {
     }
   }, [comments]);
 
+  const deletePost = async () => {
+    try {
+      const body = {
+        headers: {
+          Authorization: window.localStorage.getItem("TokenApi-Labeddit")
+        }
+      }
+
+      await axios.delete(`${BASE_URL}/posts/${post.id}`, body)
+      alert("Post excluído com sucesso")
+      fetchPosts()
+
+    } catch (error) {
+      console.log(error)
+      alert(error.response.data)
+    }
+  }
+
   const fetchComments = async () => {
 
     try {

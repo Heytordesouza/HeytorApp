@@ -42,3 +42,10 @@ export const PostContainer = styled.div`
         cursor: pointer;
   }
 `
+
+export const Top = styled.div`
+  display: flex;
+  gap: 210px;
+  color: red; 
+  cursor: pointer;
+`
