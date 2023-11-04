@@ -6,6 +6,8 @@ export const Main = styled.main`
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `
 
 export const Header = styled.header`
@@ -18,12 +20,7 @@ export const Header = styled.header`
     background: #EDEDED;
 `
 
-export const Container = styled.div`
-    display: flex;
-    width: 50%;
-    gap: 55%;
-    margin-left: 45%;
-`
+
 
 export const ImgLogo = styled.img`
     width: 28.02px;
@@ -53,14 +50,15 @@ export const Welcome = styled.div`
     height: 86px;
 
     margin-top: 20px; 
-    margin-bottom: 200px;
+    margin-bottom: 120px;
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 33px;
     line-height: 43px;
 
-    color: #373737;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `
 
 export const Input = styled.div`
@@ -81,7 +79,8 @@ export const InputUserName = styled.input`
     font-weight: 400;
     font-size: 16px;
     font-family: 'Noto Sans';
-    color: #323941;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `
 
 export const InputEmail = styled.input`
@@ -93,7 +92,8 @@ export const InputEmail = styled.input`
     font-weight: 400;
     font-size: 16px;
     font-family: 'Noto Sans';
-    color: #323941;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `
 
 export const InputPassword = styled.input`
@@ -105,7 +105,8 @@ export const InputPassword = styled.input`
     font-weight: 400;
     font-size: 16px;
     font-family: 'Noto Sans';
-    color: #323941;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `
 
 export const Signup = styled.div`
@@ -122,12 +123,19 @@ export const Signup = styled.div`
     font-size: 18px;
     line-height: 25px;
     text-align: center;
-    background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+    background: linear-gradient(90deg, #191970 0%, #0000FF 100%);
     border-radius: 27px;
     color: white;
     cursor: pointer;
     margin-bottom: 2.5vh;
     margin-top: 2.5vh;
+`
+
+export const ContainerSignup = styled.div`
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
 `
 
 export const Contract = styled.p`
@@ -142,12 +150,14 @@ export const Contract = styled.p`
     font-size: 14px;
     line-height: 19px;
 
-    color: #000000;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `
 
 
 export const ToAccept = styled.p`
     width: 361.02px;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
 `
 
 export const Span = styled.span`
@@ -155,6 +165,7 @@ export const Span = styled.span`
     width: 361.02px;
     gap: 10px;
     justify-content: center;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
 `
 
 export const Label = styled.label`
@@ -166,10 +177,12 @@ export const Label = styled.label`
     font-size: 14px;
     line-height: 19px;
 
-    color: #000000;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
 `
 
 export const CheckBox = styled.input`
     border: 1px solid #C4C4C4;
     border-radius: 2px;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    
 `

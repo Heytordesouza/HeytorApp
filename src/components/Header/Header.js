@@ -1,14 +1,19 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import imgLogo from "../../assets/imgLogo.svg";
+import imgLogo from "../../assets/logoheytorapp.png";
 import { goToHomePage, goToLoginPage } from "../../router/Coordinator";
 import { HeaderMain, Container, ImgLogo, Button, ContainerComments, ImgClose } from "./Header.styled";
 import close from "../../assets/close.svg";
+import ThemeToggle from '../../ThemeToggle';
+import { useTheme } from '../../contexts/ThemeContext';
+import exitLight from "../../assets/exitlight.png"
+import exitDark from "../../assets/exitdark.png"
 
 export const Header = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
   const params = useParams();
+  const { theme, toggleTheme } = useTheme();
 
   const logout = () => {
     window.localStorage.removeItem("TokenApi-Labeddit");
@@ -19,32 +24,35 @@ export const Header = () => {
     switch (location.pathname) {
       case "/":
         return (
-          <HeaderMain>
-            <Container>
-              <ImgLogo src={imgLogo} alt={"imgLogo"}/>
-              <Button onClick={() => logout()}>Logout</Button> 
+          <HeaderMain theme={theme}>
+            <Container >
+              <ThemeToggle onClick={toggleTheme} />
+              <ImgLogo src={imgLogo} alt={"imgLogo"} />
+              <div onClick={() => logout()} > {theme === 'light' ? (<img src={exitDark} width='33px'/>) : (<img src={exitLight} width='33px'/>)}</div>
             </Container>
           </HeaderMain>
         );
       case "/signup":
         return (
-          <HeaderMain>
+          <HeaderMain theme={theme}>
             <Container>
-              <ImgLogo src={imgLogo} alt={"imgLogo"}/>
-              <Button onClick={()=>goToLoginPage(navigate)}>Entrar</Button> 
+              <ThemeToggle onClick={toggleTheme} />
+              <ImgLogo src={imgLogo} alt={"imgLogo"} />
+              <Button onClick={() => goToLoginPage(navigate)}>Voltar</Button>
             </Container>
           </HeaderMain>
         );
       case `/comments/${params.postId}`:
         return (
-          <HeaderMain>
+          <HeaderMain theme={theme}>
             <ContainerComments>
+              <ThemeToggle onClick={toggleTheme} />
+              <ImgLogo src={imgLogo} alt={"imgLogo"} />
               <ImgClose src={close} onClick={() => goToHomePage(navigate)} />
-              <ImgLogo src={imgLogo} alt={"imgLogo"}/>
-              <Button onClick={() => logout()}>Logout</Button> 
             </ContainerComments>
           </HeaderMain>
         );
+        default:
     }
   };
   return <HeaderMain>{renderHeader()}</HeaderMain>;

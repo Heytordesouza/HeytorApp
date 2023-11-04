@@ -6,11 +6,13 @@ export const CardContainer = styled.main`
   justify-content: space-around;
   width: 364px;
   height: 175px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid ${props => (props.theme === 'dark' ? '#e0e0e0' : '#0000CD')};;
   border-radius: 12px;
   padding-left: 15px;
   margin-top: 10px;
   word-break: break-word;
+  background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+  color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
   
   p {
     font-size: 12px;
@@ -52,15 +54,18 @@ export const SubText = styled.div`
   border: 1px solid #e0e0e0;
   justify-content: space-around;
   align-items: center;
-
-  img{
-    cursor: pointer;
-  }
+  cursor: pointer;
 `
 
 export const Top = styled.div`
   display: flex;
-  gap: 210px;
-  color: red; 
-  cursor: pointer;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 35.5vw;
+
+  span {
+    width: 50vw;
+    color: ${props => (props.theme === 'dark' ? '#B0C4DE' : '#333')};
+    font-size: 13px;
+  }
 `

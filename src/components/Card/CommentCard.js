@@ -4,10 +4,12 @@ import Imglike from "../../assets/like.svg"
 import Imgdislike from "../../assets/dislike.svg"
 import { CardContainer, PostMenu, TextButton, SubTextButton, Top } from "./Card.styled"
 import { DeleteIcon } from '@chakra-ui/icons'
+import { useTheme } from '../../contexts/ThemeContext';
 
 export const CommentCard = (props) => {
 
     const { comment, fetchComments } = props
+    const { theme, toggleTheme } = useTheme();
 
     const deleteComment = async () => {
         try {
@@ -68,10 +70,10 @@ export const CommentCard = (props) => {
     }
 
     return(
-        <CardContainer>
-            <Top>
-                <p>Enviado por: {comment.creator.name}</p>
-                <DeleteIcon onClick={deleteComment} />
+        <CardContainer theme={theme}>
+            <Top theme={theme}>
+                <span>Enviado por: {comment.creator.name}</span>
+                <DeleteIcon color='red' cursor='pointer' onClick={deleteComment} />
             </Top>
             <h1>{comment.content}</h1>
             <PostMenu>

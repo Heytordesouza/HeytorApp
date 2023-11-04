@@ -3,18 +3,20 @@ import styled from "styled-components"
 export const HeaderMain = styled.header`
     display: flex;
     width: 428px;
-    height: 50px;
-    justify-content: center;
+    height: 55px;
+    justify-content: space-evenly;
     top: 0px;
     align-items: center;
-    background: #EDEDED;
+    text-align: center;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#e0e0e0')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `
 
 export const Container = styled.div`
     display: flex;
-    width: 50%;
-    gap: 45%;
-    margin-left: 45%;
+    width: 84%;
+    gap: 36%;
+    
 `
 
 export const ContainerComments = styled.div`
@@ -31,8 +33,8 @@ export const ImgClose = styled.img`
 `
 
 export const ImgLogo = styled.img`
-    width: 28.02px;
-    height: 28.64px;
+    width: 34px;
+    height: 34px;
 `
 
 export const Button = styled.div`

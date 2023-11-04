@@ -7,6 +7,8 @@ export const Main = styled.main`
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `;
 
 export const ImgLogo = styled.img`
@@ -17,7 +19,7 @@ export const ImgLogo = styled.img`
 `;
 
 export const Title = styled.div`
-    width: 152px;
+    width: 180px;
     height: 47px;
     left: 134px;
     top: 228px;
@@ -28,7 +30,7 @@ export const Title = styled.div`
     font-size: 36px;
     line-height: 47px;
 
-    color: #373737;
+    
 `;
 
 export const SubTitle = styled.div`
@@ -44,7 +46,7 @@ export const SubTitle = styled.div`
     font-size: 16px;
     line-height: 21px;
     text-align: center;
-    color: #000000;
+    
 `;
 
 export const Input = styled.div`
@@ -65,7 +67,9 @@ export const InputEmail = styled.input`
     font-weight: 400;
     font-size: 16px;
     font-family: 'Noto Sans';
-    color: #323941;
+    
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `;
 
 export const InputPassword = styled.input`
@@ -77,7 +81,8 @@ export const InputPassword = styled.input`
     font-weight: 400;
     font-size: 16px;
     font-family: 'Noto Sans';
-    color: #323941;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `;
 
 export const Button = styled.div`
@@ -99,11 +104,11 @@ export const Continue = styled.div`
     font-size: 18px;
     line-height: 25px;
     text-align: center;
-    background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+    background: linear-gradient(90deg, #191970 0%, #0000FF 100%);
     border-radius: 27px;
     color: white;
     cursor: pointer;
-    margin-bottom: 2.5vh;
+    margin-bottom: 0.5vh;
     margin-top: 2.5vh;
 `;
 
@@ -131,10 +136,11 @@ export const CreateAccount = styled.div`
     padding: 13px;
     gap: 10px;
 
-    color: #FE7E02;
+   
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#191970')};
     margin-top: 2.5vh;
 
-    border: 1px solid #FE7E02;
+    border: 1px solid #191970;
     border-radius: 27px;
     cursor: pointer;
 `;

@@ -7,12 +7,14 @@ import { Header } from "../../components/Header/Header"
 import { PostCard } from "../../components/Card/PostCard";
 import { BASE_URL } from "../../constants/BASE_URL";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import { useTheme } from '../../contexts/ThemeContext';
 
 export const HomePage = () => {
 
   const navigate = useNavigate()
 
   const context = useContext(GlobalContext);
+  const { theme, toggleTheme } = useTheme();
 
   const { posts, fetchPosts } = context;
   const [ content, setContent ] = useState("");
@@ -51,9 +53,9 @@ export const HomePage = () => {
   };
     
   return(
-    <Container>
+    <Container theme={theme}>
     <Header />
-    <PostContainer>
+    <PostContainer theme={theme}>
       <form onSubmit={createPost}>
         <section>
           <textarea
@@ -63,6 +65,7 @@ export const HomePage = () => {
           placeholder="Escreva seu post..."
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          theme={theme}
           />
         </section>
         <button>Postar</button>
@@ -72,7 +75,7 @@ export const HomePage = () => {
 
     <section>
       {posts && posts.map((post) => {
-        return <PostCard key={post.id} post={post} />;
+        return <PostCard theme={theme} key={post.id} post={post} />;
       })}
     </section>
     </Container>

@@ -3,15 +3,17 @@ import { goToSignUpPage, goToHomePage } from "../../router/Coordinator";
 import { useNavigate } from "react-router-dom";
 import { Main, ImgLogo, Title, SubTitle, Input, InputEmail, InputPassword, Button, Continue, CreateAccount, Line} from "./LoginPage.styled";
 import React, { useContext, useState } from "react";
-import imgLogo from "../../assets/imgLogo.svg";
-import line from "../../assets/line.svg";
+import imgLogo from "../../assets/logoheytorapp.png";
 import { BASE_URL } from "../../constants/BASE_URL";
 import { Spinner } from '@chakra-ui/react';
 import { GlobalContext } from '../../contexts/GlobalContext';
+import ThemeToggle from '../../ThemeToggle';
+import { useTheme } from '../../contexts/ThemeContext';
 
 export const LoginPage = () => {
     const context = useContext(GlobalContext)
     const {isLoading, setIsLoading} = context
+    const { theme, toggleTheme } = useTheme();
 
     const navigate = useNavigate();
 
@@ -34,7 +36,7 @@ export const LoginPage = () => {
     
           const response = await axios.post(`${BASE_URL}/users/login`, body);
           window.localStorage.setItem("TokenApi-Labeddit", response.data.token);
-    
+          console.log(response)
           setIsLoading(false);
           goToHomePage(navigate);
 
@@ -47,16 +49,18 @@ export const LoginPage = () => {
       };
 
     return(
-        <Main> 
+        <Main theme={theme}> 
+            <ThemeToggle  onClick={toggleTheme} />
             <ImgLogo src={imgLogo} alt={"imgLogo"}/>
-            <Title>LabEddit</Title>
-            <SubTitle>O Projeto de rede social da Labenu</SubTitle>
+            <Title>HeytorApp</Title>
+            <SubTitle>O Projeto de rede social do Heytor</SubTitle>
             <Input onSubmit={login} autoComplete="off">
                 <InputEmail 
                     value={form.email} 
                     name="email" 
                     onChange={onChangeForm} 
                     placeholder="E-mail"
+                    theme={theme}
                 />
                 <InputPassword 
                     value={form.password} 
@@ -64,12 +68,12 @@ export const LoginPage = () => {
                     onChange={onChangeForm} 
                     type="password"
                     placeholder="Senha"
+                    theme={theme}
                 />
             </Input>
             <Button>
                 <Continue disabled={isLoading} onClick={login}>{isLoading ? <Spinner /> : "Continuar"}</Continue>
-                <Line src={line} alt={"line"}/>
-                <CreateAccount onClick={()=>goToSignUpPage(navigate)}>Crie uma conta</CreateAccount>
+                <CreateAccount theme={theme} onClick={()=>goToSignUpPage(navigate)}>Crie uma conta</CreateAccount>
             </Button>
         </Main>
     )

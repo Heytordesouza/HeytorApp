@@ -8,11 +8,13 @@ import dislike from "../../assets/dislike.svg"
 import { CardContainer, PostMenu, SubText, TextButton, SubTextButton, Top } from "./Card.styled"
 import { useNavigate } from "react-router-dom";
 import { goToCommentPage } from "../../router/Coordinator";
-import { DeleteIcon } from '@chakra-ui/icons'
+import { DeleteIcon } from '@chakra-ui/icons';
+import { useTheme } from '../../contexts/ThemeContext';
 
 export const PostCard = (props) => {
     const context = useContext(GlobalContext)
     const { fetchPosts } = context
+    const { theme, toggleTheme } = useTheme();
 
     const { post } = props
     const navigate = useNavigate()
@@ -76,9 +78,9 @@ export const PostCard = (props) => {
     }
 
     return(
-        <CardContainer>
-            <Top>
-                <p>Enviado por: {post.creator.name}</p>
+        <CardContainer theme={theme}>
+            <Top theme={theme}>
+                <span>Enviado por: {post.creator.name}</span>
                 <DeleteIcon color='red' cursor='pointer' onClick={deletePost} />
             </Top>
             <h1>{post.content}</h1>
@@ -93,8 +95,8 @@ export const PostCard = (props) => {
                         {post.dislikes}
                     </SubTextButton>
                 </TextButton> 
-                <SubText>
-                    <span onClick={() => goToCommentPage(navigate, post.id)}>
+                <SubText onClick={() => goToCommentPage(navigate, post.id)}>
+                    <span>
                         <img src={coment} alt="botão-comentários" />
                     </span>
                     {post.comments}
