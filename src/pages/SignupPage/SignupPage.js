@@ -1,19 +1,18 @@
-import { goToHomePage } from "../../router/Coordinator";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { GlobalContext } from '../../contexts/GlobalContext';
+import { useTheme } from '../../contexts/ThemeContext';
+import { goToHomePage } from "../../router/Coordinator";
 import { BASE_URL } from "../../constants/BASE_URL";
 import { Header } from "../../components/Header/Header";
 import { Main, Welcome, Input, InputUserName, InputEmail, InputPassword, ContainerSignup, Signup, Contract, CheckBox, ToAccept, Span, Label } from "./SignupPage.styled";
 import { Spinner } from '@chakra-ui/react';
-import { GlobalContext } from '../../contexts/GlobalContext';
-import ThemeToggle from '../../ThemeToggle';
-import { useTheme } from '../../contexts/ThemeContext';
 
 export const SignupPage = () => {
   const context = useContext(GlobalContext)
   const { isLoading, setIsLoading } = context
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   const navigate = useNavigate();
 
@@ -79,7 +78,7 @@ export const SignupPage = () => {
           theme={theme}
         />
       </Input>
-      <Contract theme={theme}>Ao continuar, você concorda com o nosso <a href="#">Contrato de usuário</a> e nossa <a href="#">Política de Privacidade</a></Contract>
+      <Contract theme={theme}>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade</Contract>
       <ToAccept>
         <Span theme={theme}>
           <CheckBox
@@ -89,7 +88,7 @@ export const SignupPage = () => {
           <Label theme={theme}>Eu concordo em receber e-mails sobre coisas legais do HeytorApp</Label>
         </Span>
       </ToAccept>
-      <ContainerSignup  theme={theme}>
+      <ContainerSignup theme={theme}>
         <Signup onClick={signup}>{isLoading ? <Spinner /> : "Cadastrar"}</Signup>
       </ContainerSignup>
     </Main>

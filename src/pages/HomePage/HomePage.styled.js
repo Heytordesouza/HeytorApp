@@ -15,7 +15,6 @@ export const Container = styled.main`
     }
 `
 
-
 export const PostContainer = styled.div`
     height: 250px;
     margin-top: 10px;
@@ -38,6 +37,9 @@ export const PostContainer = styled.div`
     }
 
     button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 365px;
         height: 51px;
         background: linear-gradient(90deg, #191970 0%, #0000FF 100%);
@@ -47,5 +49,14 @@ export const PostContainer = styled.div`
         font-size: 18px;
         line-height: 25px;
         cursor: pointer;
+    }
+
+    @media screen and (max-device-width: 400px){
+
+        textarea,
+        button {
+            width: 95vw;
+        }
+        
     }
 `

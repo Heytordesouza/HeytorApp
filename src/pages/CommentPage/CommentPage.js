@@ -1,17 +1,20 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CardContainer, PostMenu, SubText, TextButton, SubTextButton } from "../../components/Card/Card.styled";
-import { goToLoginPage } from "../../router/Coordinator"
-import { Header } from "../../components/Header/Header";
 import { BASE_URL } from "../../constants/BASE_URL";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import { useTheme } from '../../contexts/ThemeContext';
+import { CardContainer, PostMenu, SubText, TextButton, SubTextButton } from "../../components/Card/Card.styled";
 import { Container, PostContainer } from "./CommentPage.styled";
+import { goToLoginPage } from "../../router/Coordinator"
+import { Header } from "../../components/Header/Header";
 import { CommentCard } from "../../components/Card/CommentCard";
+import { Spinner } from '@chakra-ui/react';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import coment from "../../assets/coment.svg"
 import like from "../../assets/like.svg"
 import dislike from "../../assets/dislike.svg"
-import { useTheme } from '../../contexts/ThemeContext';
 
 export const CommentPage = () => {
   const [comments, setComments] = useState([]);
@@ -20,40 +23,11 @@ export const CommentPage = () => {
   const params = useParams();
   const navigate = useNavigate();
   const context = useContext(GlobalContext);
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
-  const { posts, fetchPosts } = context;
+  const { posts, fetchPosts, isLoading, setIsLoading } = context;
 
-  useEffect(() => {
-    const token = window.localStorage.getItem("TokenApi-Labeddit");
-
-    if (!token) {
-      goToLoginPage(navigate);
-    } else {
-      fetchPosts();
-      fetchComments();
-    }
-  }, [comments]);
-
-  const deletePost = async () => {
-    try {
-      const body = {
-        headers: {
-          Authorization: window.localStorage.getItem("TokenApi-Labeddit")
-        }
-      }
-
-      await axios.delete(`${BASE_URL}/posts/${post.id}`, body)
-      alert("Post excluído com sucesso")
-      fetchPosts()
-
-    } catch (error) {
-      console.log(error)
-      alert(error.response.data)
-    }
-  }
-
-  const fetchComments = async () => {
+  const fetchComments = useCallback(async () => {
 
     try {
       const response = await axios.get(`${BASE_URL}/comments/${params.postId}`,
@@ -70,12 +44,13 @@ export const CommentPage = () => {
       console.error(error?.response?.data);
       window.alert(error?.response?.data);
     }
-  };
+  }, [params.postId]);
 
   const createComment = async (event) => {
     event.preventDefault();
 
     try {
+      setIsLoading(true);
       const body = {
         content: content,
       };
@@ -87,9 +62,14 @@ export const CommentPage = () => {
       });
 
       setContent("");
+      setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.error(error?.response?.data);
-      window.alert(error?.response?.data);
+      toast.error(error?.response?.data, {
+        theme: theme === 'dark' ? 'dark' : 'light',
+        autoClose: 1500
+      });
     }
   };
 
@@ -132,6 +112,17 @@ export const CommentPage = () => {
     }
   };
 
+  useEffect(() => {
+    const token = window.localStorage.getItem("TokenApi-Labeddit");
+
+    if (!token) {
+      goToLoginPage(navigate);
+    } else {
+      fetchPosts();
+      fetchComments();
+    }
+  }, [comments, fetchComments, fetchPosts, navigate]);
+
   const post = posts.find((post) => post.id === params.postId);
 
   return (
@@ -143,17 +134,17 @@ export const CommentPage = () => {
         <PostMenu theme={theme}>
           <TextButton>
             <SubTextButton onClick={likePost}>
-              <img src={like} />
+              <img src={like} alt="like" />
               {post?.likes}
             </SubTextButton>
             <SubTextButton onClick={dislikePost}>
-              <img src={dislike} />
+              <img src={dislike} alt="dislike" />
               {post?.dislikes}
             </SubTextButton>
           </TextButton>
           <SubText>
             <span>
-              <img src={coment} />
+              <img src={coment} alt="coment" />
             </span>
             {post?.comment}
           </SubText>
@@ -171,7 +162,7 @@ export const CommentPage = () => {
               onChange={(e) => setContent(e.target.value)}
             />
           </section>
-          <button>Responder</button>
+          <button disabled={isLoading} onClick={createComment}>{isLoading ? <Spinner /> : "Responder"}</button>
         </form>
       </PostContainer>
 
