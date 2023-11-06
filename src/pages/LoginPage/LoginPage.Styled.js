@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Main = styled.main`
+export const MainContainer = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +50,7 @@ export const SubTitle = styled.div`
     }
 `;
 
-export const Input = styled.div`
+export const InputContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1vh;
@@ -95,7 +95,7 @@ export const InputPassword = styled.input`
     }
 `;
 
-export const Button = styled.div`
+export const ButtonContainer = styled.div`
     display: flex;
     flex-direction: column;
 `;

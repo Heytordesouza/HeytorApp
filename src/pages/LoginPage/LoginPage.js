@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { GlobalContext } from '../../contexts/GlobalContext';
 import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
 import { useTheme } from '../../contexts/ThemeContext';
-import { Main, ImgLogo, Title, SubTitle, Input, InputEmail, InputPassword, Button, Continue, CreateAccount } from "./LoginPage.styled";
+import { MainContainer, ImgLogo, Title, SubTitle, InputContainer, InputEmail, InputPassword, ButtonContainer, Continue, CreateAccount } from "./LoginPage.styled";
 import React, { useContext, useState } from "react";
 import { goToSignUpPage, goToHomePage } from "../../router/Coordinator";
 import { BASE_URL } from "../../constants/BASE_URL";
@@ -48,12 +48,12 @@ export const LoginPage = () => {
     };
 
     return (
-        <Main theme={theme}>
+        <MainContainer theme={theme}>
             <ThemeToggle onClick={toggleTheme} />
             <ImgLogo src={logoImg} alt={"logoImg"} />
             <Title>HeytorApp</Title>
             <SubTitle>O Projeto de rede social do Heytor</SubTitle>
-            <Input onSubmit={login} autoComplete="off">
+            <InputContainer onSubmit={login} autoComplete="off">
                 <InputEmail
                     value={form.email}
                     name="email"
@@ -69,11 +69,11 @@ export const LoginPage = () => {
                     placeholder="Senha"
                     theme={theme}
                 />
-            </Input>
-            <Button>
+            </InputContainer>
+            <ButtonContainer>
                 <Continue disabled={isLoading} onClick={login}>{isLoading ? <Spinner /> : "Continuar"}</Continue>
                 <CreateAccount theme={theme} onClick={() => goToSignUpPage(navigate)}>Crie uma conta</CreateAccount>
-            </Button>
-        </Main>
+            </ButtonContainer>
+        </MainContainer>
     )
 }
