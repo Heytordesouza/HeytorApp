@@ -2,52 +2,41 @@ import styled from "styled-components"
 
 export const HeaderMain = styled.header`
     display: flex;
-    width: 428px;
-    height: 50px;
-    justify-content: center;
+    width: 440px;
+    height: 55px;
+    justify-content: space-evenly;
     top: 0px;
     align-items: center;
-    background: #EDEDED;
+    text-align: center;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#fff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+
+    @media screen and (max-device-width: 450px){
+        width: 95vw;
+    }
 `
 
 export const Container = styled.div`
     display: flex;
-    width: 50%;
-    gap: 45%;
-    margin-left: 45%;
+    width: 80%;
+    justify-content: space-between;
 `
 
 export const ContainerComments = styled.div`
     display: flex;
-    width: 50%;
-    gap: 50%;
-    justify-content: center;
-`
-
-export const ImgClose = styled.img`
-    display: flex;
-    margin-right: 12%;
-    cursor: pointer;
+    width: 98%;
+    gap: 20%;
+    justify-content: space-evenly;
+    align-items: center;
 `
 
 export const ImgLogo = styled.img`
-    width: 28.02px;
-    height: 28.64px;
+    width: 34px;
+    height: 34px;
 `
 
-export const Button = styled.div`
-    width: 70px;
-    height: 25px;
-
-    font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
+export const ImgExit = styled.img`
+    width: 33px;
+    height: 33px;
     cursor: pointer;
-    /* identical to box height */
-
-    text-align: center;
-
-    color: #4088CB;
 `

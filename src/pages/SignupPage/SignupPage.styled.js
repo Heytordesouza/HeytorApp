@@ -6,6 +6,8 @@ export const Main = styled.main`
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 `
 
 export const Header = styled.header`
@@ -18,13 +20,6 @@ export const Header = styled.header`
     background: #EDEDED;
 `
 
-export const Container = styled.div`
-    display: flex;
-    width: 50%;
-    gap: 55%;
-    margin-left: 45%;
-`
-
 export const ImgLogo = styled.img`
     width: 28.02px;
     height: 28.64px;
@@ -35,32 +30,29 @@ export const ButtonLogin = styled.div`
     height: 25px;
     left: 344px;
     top: 57px;
-
-    font-family: 'Noto Sans';
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 25px;
     cursor: pointer;
-
     text-align: center;
-
     color: #4088CB;
 `
 
 export const Welcome = styled.div`
     width: 364px;
     height: 86px;
-
     margin-top: 20px; 
-    margin-bottom: 200px;
-    font-family: 'IBM Plex Sans';
-    font-style: normal;
+    margin-bottom: 120px;
     font-weight: 700;
     font-size: 33px;
     line-height: 43px;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 
-    color: #373737;
+    @media screen and (max-device-width: 400px){
+        width: 90vw;
+        font-size: 8vw;
+    }
 `
 
 export const Input = styled.div`
@@ -80,8 +72,12 @@ export const InputUserName = styled.input`
     padding-left: 2vw;
     font-weight: 400;
     font-size: 16px;
-    font-family: 'Noto Sans';
-    color: #323941;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+
+    @media screen and (max-device-width: 400px){
+        width: 95vw; 
+    }
 `
 
 export const InputEmail = styled.input`
@@ -92,8 +88,12 @@ export const InputEmail = styled.input`
     padding-left: 2vw;
     font-weight: 400;
     font-size: 16px;
-    font-family: 'Noto Sans';
-    color: #323941;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+
+    @media screen and (max-device-width: 400px){
+        width: 95vw; 
+    }
 `
 
 export const InputPassword = styled.input`
@@ -104,8 +104,12 @@ export const InputPassword = styled.input`
     padding-left: 2vw;
     font-weight: 400;
     font-size: 16px;
-    font-family: 'Noto Sans';
-    color: #323941;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+
+    @media screen and (max-device-width: 400px){
+        width: 95vw; 
+    }
 `
 
 export const Signup = styled.div`
@@ -116,18 +120,28 @@ export const Signup = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 1vh;
-    font-family: 'Noto Sans';
-    font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 25px;
     text-align: center;
-    background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+    background: linear-gradient(90deg, #191970 0%, #0000FF 100%);
     border-radius: 27px;
     color: white;
     cursor: pointer;
     margin-bottom: 2.5vh;
     margin-top: 2.5vh;
+
+    @media screen and (max-device-width: 400px){
+        width: 95vw; 
+        margin-top: 8vw;
+    }
+`
+
+export const ContainerSignup = styled.div`
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
 `
 
 export const Contract = styled.p`
@@ -135,19 +149,26 @@ export const Contract = styled.p`
     height: 38px;
     margin-top: 45px;
     margin-bottom: 15px;
-
-    font-family: 'Noto Sans';
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
 
-    color: #000000;
+    @media screen and (max-device-width: 400px){
+        width: 95vw; 
+        margin-bottom: 12vw;
+        font-size: 6vw;
+    }
 `
-
 
 export const ToAccept = styled.p`
     width: 361.02px;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+
+    @media screen and (max-device-width: 400px){
+        width: 95vw; 
+    }
 `
 
 export const Span = styled.span`
@@ -155,21 +176,31 @@ export const Span = styled.span`
     width: 361.02px;
     gap: 10px;
     justify-content: center;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+
+    @media screen and (max-device-width: 400px){
+        width: 95vw; 
+    }
 `
 
 export const Label = styled.label`
     width: 361px;
     height: 38px;
-    font-family: 'Noto Sans';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
 
-    color: #000000;
+    @media screen and (max-device-width: 400px){
+        width: 95vw; 
+        font-size: 6vw;
+    }
 `
 
 export const CheckBox = styled.input`
     border: 1px solid #C4C4C4;
     border-radius: 2px;
+    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
 `
