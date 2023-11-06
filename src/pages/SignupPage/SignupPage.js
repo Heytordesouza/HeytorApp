@@ -6,7 +6,10 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { goToHomePage } from "../../router/Coordinator";
 import { BASE_URL } from "../../constants/BASE_URL";
 import { Header } from "../../components/Header/Header";
-import { Main, Welcome, Input, InputUserName, InputEmail, InputPassword, ContainerSignup, Signup, Contract, CheckBox, ToAccept, Span, Label } from "./SignupPage.styled";
+import {
+  Main, Welcome, Input, InputUserName, InputEmail, InputPassword, ContainerSignup,
+  Signup, Contract, CheckBox, ToAccept, Span, Label
+} from "./SignupPage.styled";
 import { Spinner } from '@chakra-ui/react';
 
 export const SignupPage = () => {

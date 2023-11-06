@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { GlobalContext } from '../../contexts/GlobalContext';
 import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
 import { useTheme } from '../../contexts/ThemeContext';
-import { MainContainer, ImgLogo, Title, SubTitle, InputContainer, InputEmail, InputPassword, ButtonContainer, Continue, CreateAccount } from "./LoginPage.styled";
+import {
+    MainContainer, ImgLogo, Title, SubTitle, InputContainer,
+    InputEmail, InputPassword, ButtonContainer, Continue, CreateAccount
+} from "./LoginPage.styled";
 import React, { useContext, useState } from "react";
 import { goToSignUpPage, goToHomePage } from "../../router/Coordinator";
 import { BASE_URL } from "../../constants/BASE_URL";
