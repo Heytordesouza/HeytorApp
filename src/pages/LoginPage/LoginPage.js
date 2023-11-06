@@ -7,7 +7,7 @@ import { Main, ImgLogo, Title, SubTitle, Input, InputEmail, InputPassword, Butto
 import React, { useContext, useState } from "react";
 import { goToSignUpPage, goToHomePage } from "../../router/Coordinator";
 import { BASE_URL } from "../../constants/BASE_URL";
-import imgLogo from "../../assets/logoheytorapp.png";
+import logoImg from "../../assets/logoheytorapp.png";
 import { Spinner } from '@chakra-ui/react';
 
 export const LoginPage = () => {
@@ -50,7 +50,7 @@ export const LoginPage = () => {
     return (
         <Main theme={theme}>
             <ThemeToggle onClick={toggleTheme} />
-            <ImgLogo src={imgLogo} alt={"imgLogo"} />
+            <ImgLogo src={logoImg} alt={"logoImg"} />
             <Title>HeytorApp</Title>
             <SubTitle>O Projeto de rede social do Heytor</SubTitle>
             <Input onSubmit={login} autoComplete="off">
