@@ -7,7 +7,7 @@ import { useTheme } from '../../contexts/ThemeContext';
 import {
     MainContainer, ImgLogo, Title, SubTitle, InputContainer,
     InputEmail, InputPassword, ButtonContainer, Continue, CreateAccount
-} from "./LoginPage.styled";
+} from "./styled"
 import { goToSignUpPage, goToHomePage } from "../../router/Coordinator";
 import { BASE_URL } from "../../constants/BASE_URL";
 import logoImg from "../../assets/logoheytorapp.png";
