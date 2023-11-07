@@ -51,6 +51,8 @@ export const SubTextButton = styled.div`
   
   img{
     cursor: pointer;
+    width: 20px;
+    margin-top: 2px;
   }
 `
 
@@ -59,9 +61,13 @@ export const SubText = styled.div`
   width: 60px;
   border-radius: 50px;
   border: 1px solid #e0e0e0;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   cursor: pointer;
+
+  img{
+    width: 20px;
+  }
 `
 
 export const Top = styled.div`
