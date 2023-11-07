@@ -1,8 +1,8 @@
-# Labeddit-Frontend
+# HeytorApp
 
 Projeto fullstack feito no Bootcamp da Labenu para a criação de um aplicativo mobile first inspirado no Reddit.
 
-🟢 Acesse por [aqui](https://labeddit-frontend-heytor.vercel.app/) o link do deploy.
+🟢 Acesse por [aqui](https://heytorapp.vercel.app/) o link do deploy.
 
 ## Layout
 
@@ -23,4 +23,4 @@ O layout foi desenvolvido a partir do template do Figma que pode ser acessado po
 📍 Axios
 📍 Chakra UI
 
-🟢 Acesse por [aqui](https://github.com/Heytordesouza/Labeddit-Backend) o link do repositório do LabEddit Backend.
+🟢 Acesse por [aqui](https://github.com/Heytordesouza/HeytorApp-Backend) o link do repositório do LabEddit Backend.
