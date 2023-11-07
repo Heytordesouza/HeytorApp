@@ -6,8 +6,8 @@ export const Main = styled.main`
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
-    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 `
 
 export const Header = styled.header`
@@ -46,8 +46,8 @@ export const Welcome = styled.div`
     font-weight: 700;
     font-size: 33px;
     line-height: 43px;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
-    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 
     @media screen and (max-device-width: 400px){
         width: 90vw;
@@ -72,8 +72,8 @@ export const InputUserName = styled.input`
     padding-left: 2vw;
     font-weight: 400;
     font-size: 16px;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
-    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 
     @media screen and (max-device-width: 400px){
         width: 95vw; 
@@ -88,8 +88,8 @@ export const InputEmail = styled.input`
     padding-left: 2vw;
     font-weight: 400;
     font-size: 16px;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
-    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 
     @media screen and (max-device-width: 400px){
         width: 95vw; 
@@ -104,8 +104,8 @@ export const InputPassword = styled.input`
     padding-left: 2vw;
     font-weight: 400;
     font-size: 16px;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
-    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 
     @media screen and (max-device-width: 400px){
         width: 95vw; 
@@ -141,7 +141,7 @@ export const ContainerSignup = styled.div`
     display: flex;
     width: 100vw;
     justify-content: center;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
 `
 
 export const Contract = styled.p`
@@ -152,8 +152,8 @@ export const Contract = styled.p`
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
-    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 
     @media screen and (max-device-width: 400px){
         width: 95vw; 
@@ -164,7 +164,7 @@ export const Contract = styled.p`
 
 export const ToAccept = styled.p`
     width: 361.02px;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
 
     @media screen and (max-device-width: 400px){
         width: 95vw; 
@@ -176,7 +176,7 @@ export const Span = styled.span`
     width: 361.02px;
     gap: 10px;
     justify-content: center;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
 
     @media screen and (max-device-width: 400px){
         width: 95vw; 
@@ -190,7 +190,7 @@ export const Label = styled.label`
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
 
     @media screen and (max-device-width: 400px){
         width: 95vw; 
@@ -201,5 +201,5 @@ export const Label = styled.label`
 export const CheckBox = styled.input`
     border: 1px solid #C4C4C4;
     border-radius: 2px;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
 `

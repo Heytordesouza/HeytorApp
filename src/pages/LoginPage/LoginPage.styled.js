@@ -7,8 +7,8 @@ export const MainContainer = styled.div`
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
-    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 `;
 
 export const ImgLogo = styled.img`
@@ -72,8 +72,8 @@ export const InputEmail = styled.input`
     padding-left: 2vw;
     font-weight: 400;
     font-size: 16px;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
-    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 
     @media screen and (max-device-width: 400px){
         width: 95vw;
@@ -88,8 +88,8 @@ export const InputPassword = styled.input`
     padding-left: 2vw;
     font-weight: 400;
     font-size: 16px;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
-    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 
     @media screen and (max-device-width: 400px){
         width: 95vw;

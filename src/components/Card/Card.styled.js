@@ -6,17 +6,17 @@ export const CardContainer = styled.main`
   justify-content: space-around;
   width: 364px;
   height: 175px;
-  border: 1px solid ${props => (props.theme === 'dark' ? '#e0e0e0' : '#0000CD')};;
+  border: 1px solid ${props => (props.theme === 'dark' ? '#e0e0e0' : '#0000cd')};;
   border-radius: 12px;
   padding-left: 15px;
   margin-bottom: 10px;
   word-break: break-word;
-  background-color: ${props => (props.theme === 'dark' ? '#333' : '#ffffff')};
-  color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+  background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+  color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
   
   p {
     font-size: 14px;
-    color: ${props => (props.theme === 'dark' ? '#B0C4DE' : '#333')};
+    color: ${props => (props.theme === 'dark' ? '#b0c4de' : '#333333')};
   }
 
   h1 {
@@ -77,7 +77,7 @@ export const Top = styled.div`
 
   span {
     width: 275px;
-    color: ${props => (props.theme === 'dark' ? '#B0C4DE' : '#333')};
+    color: ${props => (props.theme === 'dark' ? '#b0c4de' : '#333333')};
     font-size: 14px;
   }
 `
