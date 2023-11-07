@@ -8,8 +8,8 @@ export const HeaderMain = styled.header`
     top: 0px;
     align-items: center;
     text-align: center;
-    background-color: ${props => (props.theme === 'dark' ? '#333' : '#fff')};
-    color: ${props => (props.theme === 'dark' ? '#fff' : '#333')};
+    background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
+    color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 
     @media screen and (max-device-width: 450px){
         width: 95vw;
@@ -32,6 +32,12 @@ export const ContainerComments = styled.div`
     gap: 20%;
     justify-content: space-evenly;
     align-items: center;
+
+    @media screen and (max-device-width: 400px){
+        width: 100%;
+        gap: 29%;
+        justify-content: space-around;
+    }
 `
 
 export const ImgLogo = styled.img`
