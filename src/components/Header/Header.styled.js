@@ -20,6 +20,10 @@ export const Container = styled.div`
     display: flex;
     width: 80%;
     justify-content: space-between;
+
+    @media screen and (max-device-width: 400px){
+        width: 95%;
+    }
 `
 
 export const ContainerComments = styled.div`

@@ -12,10 +12,11 @@ export const MainContainer = styled.div`
 `;
 
 export const ImgLogo = styled.img`
+    position: relative;
     width: 84px;
     height: 84px;
     margin-bottom: 1vh;
-    margin-top: 80px;
+    margin-top: 100px;
 `;
 
 export const Title = styled.div`

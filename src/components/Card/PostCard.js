@@ -2,9 +2,6 @@ import { useContext } from "react"
 import axios from "axios"
 import { GlobalContext } from "../../contexts/GlobalContext"
 import { BASE_URL } from "../../constants/BASE_URL"
-import coment from "../../assets/coment.svg"
-import like from "../../assets/like.svg"
-import dislike from "../../assets/dislike.svg"
 import { CardContainer, PostMenu, SubText, TextButton, SubTextButton, Top } from "./Card.styled"
 import { useNavigate } from "react-router-dom";
 import { goToCommentPage } from "../../router/Coordinator";
@@ -12,6 +9,12 @@ import { DeleteIcon } from '@chakra-ui/icons';
 import { useTheme } from '../../contexts/ThemeContext';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import likeDark from "../../assets/likedark.png"
+import likeLight from "../../assets/likelight.png"
+import disLikeDark from "../../assets/dislikedark.png"
+import disLikeLight from "../../assets/dislikelight.png"
+import commentDark from "../../assets/commentdark.png"
+import commentLight from "../../assets/commentlight.png"
 
 export const PostCard = (props) => {
     const context = useContext(GlobalContext)
@@ -96,18 +99,28 @@ export const PostCard = (props) => {
             <PostMenu>
                 <TextButton>
                     <SubTextButton onClick={likePost}>
-                        <img src={like} alt="botão-like" />
+                        <div>{theme === 'light' ?
+                            (<img src={likeDark} alt="botão-like" />)
+                            :
+                            (<img src={likeLight} alt="botão-like" />)}
+                        </div>
                         {post.likes}
                     </SubTextButton>
                     <SubTextButton onClick={dislikePost}>
-                        <img src={dislike} alt="botão-dislike" />
+                        <div>{theme === 'light' ?
+                            (<img src={disLikeDark} alt="botão-dislike" />)
+                            :
+                            (<img src={disLikeLight} alt="botão-dislike" />)}
+                        </div>
                         {post.dislikes}
                     </SubTextButton>
                 </TextButton>
                 <SubText onClick={() => goToCommentPage(navigate, post.id)}>
-                    <span>
-                        <img src={coment} alt="botão-comentários" />
-                    </span>
+                    <div>{theme === 'light' ?
+                        (<img src={commentDark} alt="botão-comment" />)
+                        :
+                        (<img src={commentLight} alt="botão-comment" />)}
+                    </div>
                     {post.comments}
                 </SubText>
             </PostMenu>

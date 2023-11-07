@@ -42,7 +42,7 @@ export const Welcome = styled.div`
     width: 364px;
     height: 86px;
     margin-top: 20px; 
-    margin-bottom: 120px;
+    margin-bottom: 100px;
     font-weight: 700;
     font-size: 33px;
     line-height: 43px;
@@ -157,8 +157,8 @@ export const Contract = styled.p`
 
     @media screen and (max-device-width: 400px){
         width: 95vw; 
-        margin-bottom: 12vw;
-        font-size: 6vw;
+        margin-bottom: 6vw;
+        font-size: 4vw;
     }
 `
 
@@ -186,7 +186,6 @@ export const Span = styled.span`
 export const Label = styled.label`
     width: 361px;
     height: 38px;
-    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -195,7 +194,7 @@ export const Label = styled.label`
 
     @media screen and (max-device-width: 400px){
         width: 95vw; 
-        font-size: 6vw;
+        font-size: 4vw;
     }
 `
 
