@@ -10,16 +10,6 @@ export const Main = styled.main`
     color: ${props => (props.theme === 'dark' ? '#ffffff' : '#333333')};
 `
 
-export const Header = styled.header`
-    display: flex;
-    width: 428px;
-    height: 50px;
-    justify-content: center;
-    top: 0px;
-    align-items: center;
-    background: #EDEDED;
-`
-
 export const ImgLogo = styled.img`
     width: 28.02px;
     height: 28.64px;

@@ -2,9 +2,9 @@ import styled from "styled-components"
 
 export const HeaderMain = styled.header`
     display: flex;
-    width: 440px;
+    width: 388px;
     height: 55px;
-    justify-content: space-evenly;
+    justify-content: space-around;
     top: 0px;
     align-items: center;
     text-align: center;
@@ -18,7 +18,7 @@ export const HeaderMain = styled.header`
 
 export const Container = styled.div`
     display: flex;
-    width: 80%;
+    width: 88%;
     justify-content: space-between;
 
     @media screen and (max-device-width: 400px){
@@ -30,7 +30,7 @@ export const ContainerComments = styled.div`
     display: flex;
     width: 98%;
     gap: 20%;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 
     @media screen and (max-device-width: 400px){
