@@ -42,7 +42,7 @@ export const Welcome = styled.div`
     width: 364px;
     height: 86px;
     margin-top: 20px; 
-    margin-bottom: 100px;
+    margin-bottom: 70px;
     font-weight: 700;
     font-size: 33px;
     line-height: 43px;
@@ -139,7 +139,7 @@ export const Signup = styled.div`
 
 export const ContainerSignup = styled.div`
     display: flex;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
 `
