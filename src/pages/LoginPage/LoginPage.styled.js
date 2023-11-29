@@ -16,7 +16,7 @@ export const ImgLogo = styled.img`
     width: 84px;
     height: 84px;
     margin-bottom: 1vh;
-    margin-top: 100px;
+    margin-top: 70px;
 `;
 
 export const Title = styled.div`
@@ -99,6 +99,9 @@ export const InputPassword = styled.input`
 export const ButtonContainer = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 `;
 
 export const Continue = styled.div`
@@ -139,7 +142,7 @@ export const CreateAccount = styled.div`
     padding: 13px;
     gap: 10px;
     color: ${props => (props.theme === 'dark' ? '#ffffff' : '#191970')};
-    margin-top: 2.5vh;
+    margin-top: 2vh;
     border: 1px solid #191970;
     border-radius: 27px;
     cursor: pointer;
