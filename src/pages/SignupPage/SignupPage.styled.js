@@ -49,7 +49,6 @@ export const Input = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1vh;
-    width: 80%;
     justify-content: center;
     align-items: center;
 `
@@ -103,7 +102,7 @@ export const InputPassword = styled.input`
 `
 
 export const Signup = styled.div`
-    width: 365px;
+    width: 360px;
     height: 51px;
     display: flex;
     justify-content: center;
@@ -129,7 +128,6 @@ export const Signup = styled.div`
 
 export const ContainerSignup = styled.div`
     display: flex;
-    width: 100%;
     justify-content: center;
     background-color: ${props => (props.theme === 'dark' ? '#333333' : '#ffffff')};
 `
